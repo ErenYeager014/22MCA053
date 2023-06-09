@@ -1,0 +1,45 @@
+const mongoose=require('mongoose');
+
+const trainSchema = mongoose.Schema({
+    trainname:{
+        type:String,
+        required:true,
+    },
+    trainNumber:{
+        type:Number,
+        required:true,
+    },
+    depatureTime:{
+        hours:{
+            type:Number,
+            required:true,
+        },
+        Minutes:{
+            type:Number,
+            required:true,
+        },
+        Seconds:{
+            type:Number,
+            required:true,
+        },
+    },
+    SeatsAvailable:{
+        sleeper:{
+            type:Number,
+            required:true,
+        },
+        AC:{
+            type:Number,
+            required:true,
+        },
+    },
+    price:{
+        type:Number,
+        required:true,
+    },
+    delayedBy:{
+        type:Number,
+        required:true,
+    },
+})
+module.exports=mongoose.model('train',trainSchema)
